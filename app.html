@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapasya - Your Spiritual Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, .serif-font {
+            font-family: 'Merriweather', serif;
+        }
+        .phone-mockup {
+            border: 12px solid #2d2d2d;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            aspect-ratio: 9/19;
+        }
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 24px;
+            width: 120px;
+            background: #2d2d2d;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 20;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ea580c 0%, #ca8a04 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fff7ed;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fdba74;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-orange-50 text-stone-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-orange-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <a href="https://i.ibb.co/PGHzBv0J/1764858418333.png" class="logo-link">
+  <img src="https://i.ibb.co/PGHzBv0J/1764858418333.png" alt="Logo" />
+</a>
+
+<style>
+  .logo-link {
+    display: inline-block;
+  }
+  .logo-link img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+</style>
+                    <span class="serif-font font-bold text-2xl text-stone-800">Tapasya</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#features" class="text-stone-600 hover:text-orange-600 transition-colors font-medium">Features</a>
+                    <a href="#transformation" class="text-stone-600 hover:text-orange-600 transition-colors font-medium">The Journey</a>
+                    <a href="#creator" class="text-stone-600 hover:text-orange-600 transition-colors font-medium">Creator</a>
+                    <button class="bg-orange-600 text-white px-6 py-2 rounded-full font-medium hover:bg-orange-700 transition-all shadow-lg hover:shadow-orange-200 transform hover:-translate-y-0.5">
+                        Download App
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-stone-600 hover:text-orange-600 p-2">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white border-t border-orange-100" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-stone-700 hover:bg-orange-50 hover:text-orange-600">Features</a>
+                <a href="#transformation" class="block px-3 py-2 rounded-md text-base font-medium text-stone-700 hover:bg-orange-50 hover:text-orange-600">The Journey</a>
+                <a href="#creator" class="block px-3 py-2 rounded-md text-base font-medium text-stone-700 hover:bg-orange-50 hover:text-orange-600">Creator</a>
+                <a href="#" class="block px-3 py-2 mt-4 text-center rounded-md text-base font-medium bg-orange-600 text-white hover:bg-orange-700">Download App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-orange-100/50 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-yellow-100/50 rounded-full blur-3xl opacity-50"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left space-y-8">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-800 text-sm font-semibold mb-2">
+                        <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i>
+                        Start Your 365-Day Transformation
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight text-stone-900">
+                        From Normal to <br>
+                        <span class="gradient-text serif-font italic">Spiritual.</span>
+                    </h1>
+                    <p class="text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Tapasya isn't just a habit tracker; it's a discipline builder. Track your Sadhana, compete with friends, and unlock your highest potential.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button class="flex items-center justify-center px-8 py-4 bg-stone-900 text-white rounded-xl hover:bg-stone-800 transition-all shadow-xl">
+                            <i data-lucide="apple" class="w-6 h-6 mr-3"></i>
+                            <div class="text-left">
+                                <div class="text-xs text-stone-400">Download on the</div>
+                                <div class="text-sm font-bold">App Store</div>
+                            </div>
+                        </button>
+                        <button class="flex items-center justify-center px-8 py-4 bg-white text-stone-900 border border-stone-200 rounded-xl hover:bg-stone-50 transition-all shadow-xl">
+                            <i data-lucide="play-circle" class="w-6 h-6 mr-3"></i>
+                            <div class="text-left">
+                                <div class="text-xs text-stone-500">Get it on</div>
+                                <div class="text-sm font-bold">Google Play</div>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="pt-8 flex items-center justify-center lg:justify-start gap-4 text-stone-500 text-sm">
+                        <div class="flex -space-x-2">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sasha" alt="User">
+                        </div>
+                        <p>Join <span class="font-bold text-stone-800">10,000+</span> spiritual seekers</p>
+                    </div>
+                </div>
+
+                <!-- Hero Mockup Animation -->
+                <div class="relative flex justify-center lg:justify-end animate-float">
+                    <div class="w-72 sm:w-80 phone-mockup bg-orange-50">
+                        <div class="phone-notch"></div>
+                        <!-- Screen Content -->
+                        <div class="h-full overflow-hidden flex flex-col relative">
+                            <!-- App Header -->
+                            <div class="pt-10 pb-4 px-6 bg-gradient-to-br from-orange-500 to-red-500 text-white">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="font-bold text-lg">My Tapasya</h3>
+                                    <i data-lucide="bell" class="w-5 h-5"></i>
+                                </div>
+                                <div class="text-center py-4">
+                                    <div class="text-sm opacity-90">Day 45 of 365</div>
+                                    <div class="text-4xl font-bold mt-1">78%</div>
+                                    <div class="text-xs opacity-75 mt-1">Spiritual Score</div>
+                                </div>
+                            </div>
+                            
+                            <!-- App Body -->
+                            <div class="flex-1 bg-gray-50 p-4 space-y-4 overflow-hidden">
+                                <!-- Quote Card -->
+                                <div class="bg-white p-4 rounded-xl shadow-sm border border-orange-100">
+                                    <div class="flex gap-2 mb-2">
+                                        <i data-lucide="quote" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="text-xs font-bold text-orange-600 uppercase">Daily Wisdom</span>
+                                    </div>
+                                    <p class="text-sm text-gray-700 italic">"You are what you do, not what you say you'll do."</p>
+                                </div>
+
+                                <!-- Habits List -->
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between bg-white p-3 rounded-xl shadow-sm">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                                <i data-lucide="droplets" class="w-4 h-4"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-bold">Meditation</div>
+                                                <div class="text-xs text-gray-500">20 mins completed</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white">
+                                            <i data-lucide="check" class="w-3 h-3"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between bg-white p-3 rounded-xl shadow-sm">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                                                <i data-lucide="book-open" class="w-4 h-4"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-bold">Read Gita</div>
+                                                <div class="text-xs text-gray-500">Chapter 4</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-6 h-6 rounded-full border-2 border-gray-200"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bottom Nav -->
+                            <div class="bg-white border-t p-4 flex justify-between text-gray-400">
+                                <i data-lucide="home" class="w-6 h-6 text-orange-500"></i>
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                                <i data-lucide="award" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decor elements behind phone -->
+                    <div class="absolute -z-10 top-20 -right-12 w-24 h-24 bg-orange-400 rounded-full blur-2xl opacity-20"></div>
+                    <div class="absolute -z-10 bottom-20 -left-12 w-32 h-32 bg-yellow-400 rounded-full blur-2xl opacity-20"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-stone-900 mb-4">Features built for <span class="text-orange-600">Discipline</span></h2>
+                <p class="text-stone-600 text-lg">Tapasya combines modern psychology with ancient wisdom to help you stay consistent.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-2xl bg-orange-50 hover:bg-orange-100 transition-colors duration-300 border border-orange-100">
+                    <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-orange-600 shadow-sm mb-6">
+                        <i data-lucide="users" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-3">Satsang Mode</h3>
+                    <p class="text-stone-600 leading-relaxed">Don't walk the path alone. Create groups with friends, track each other's progress, and hold each other accountable.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-2xl bg-orange-50 hover:bg-orange-100 transition-colors duration-300 border border-orange-100">
+                    <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-orange-600 shadow-sm mb-6">
+                        <i data-lucide="award" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-3">Karma Badges</h3>
+                    <p class="text-stone-600 leading-relaxed">Gamify your spirituality. Earn exclusive badges like "Early Riser" or "Meditator" as you complete streaks.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-2xl bg-orange-50 hover:bg-orange-100 transition-colors duration-300 border border-orange-100">
+                    <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-orange-600 shadow-sm mb-6">
+                        <i data-lucide="sunrise" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-3">Daily Wisdom</h3>
+                    <p class="text-stone-600 leading-relaxed">Start every morning with a curated spiritual quote that sets the intention for your entire day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Showcase / Interactive Tabs -->
+    <section id="transformation" class="py-20 bg-stone-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Content -->
+                <div class="space-y-8">
+                    <h2 class="text-3xl lg:text-4xl font-bold serif-font">The 365-Day Transformation</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-600/20 flex items-center justify-center text-orange-500 font-bold border border-orange-600/30">01</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Build the Foundation</h4>
+                                <p class="text-stone-400">Start with small habits. 10 minutes of meditation, 5 pages of reading. Tapasya tracks the small wins.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-600/20 flex items-center justify-center text-orange-500 font-bold border border-orange-600/30">02</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Climb the Leaderboard</h4>
+                                <p class="text-stone-400">Compete in a healthy way. See where you stand among your spiritual circle and get motivated.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-600/20 flex items-center justify-center text-orange-500 font-bold border border-orange-600/30">03</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Achieve Mastery</h4>
+                                <p class="text-stone-400">After 365 days of consistency, look back at your journey from ordinary to extraordinary.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Leaderboard Mockup -->
+                <div class="relative flex justify-center">
+                    <div class="w-72 bg-white text-stone-900 rounded-3xl shadow-2xl p-4 transform rotate-3 hover:rotate-0 transition-transform duration-500 border-4 border-stone-800">
+                        <div class="text-center mb-4 pt-2">
+                            <h3 class="font-bold text-lg">Community Leaderboard</h3>
+                            <p class="text-xs text-stone-500">This Week's Top Seekers</p>
+                        </div>
+                        <div class="space-y-3">
+                            <!-- User 1 -->
+                            <div class="flex items-center justify-between p-3 bg-orange-50 rounded-xl border border-orange-100">
+                                <div class="flex items-center gap-3">
+                                    <span class="font-bold text-orange-600">1</span>
+                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Kanchan" class="w-8 h-8 rounded-full bg-white">
+                                    <div class="text-sm font-semibold">Kanchan M.</div>
+                                </div>
+                                <div class="text-xs font-bold bg-orange-200 text-orange-800 px-2 py-1 rounded">980 pts</div>
+                            </div>
+                            <!-- User 2 -->
+                            <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-stone-100">
+                                <div class="flex items-center gap-3">
+                                    <span class="font-bold text-stone-400">2</span>
+                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul" class="w-8 h-8 rounded-full bg-gray-100">
+                                    <div class="text-sm font-semibold">Rahul S.</div>
+                                </div>
+                                <div class="text-xs font-bold text-stone-500">850 pts</div>
+                            </div>
+                            <!-- User 3 -->
+                            <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-stone-100">
+                                <div class="flex items-center gap-3">
+                                    <span class="font-bold text-stone-400">3</span>
+                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Priya" class="w-8 h-8 rounded-full bg-gray-100">
+                                    <div class="text-sm font-semibold">Priya K.</div>
+                                </div>
+                                <div class="text-xs font-bold text-stone-500">820 pts</div>
+                            </div>
+                            <!-- User 4 -->
+                            <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-stone-100 opacity-70">
+                                <div class="flex items-center gap-3">
+                                    <span class="font-bold text-stone-400">4</span>
+                                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Amit" class="w-8 h-8 rounded-full bg-gray-100">
+                                    <div class="text-sm font-semibold">Amit R.</div>
+                                </div>
+                                <div class="text-xs font-bold text-stone-500">710 pts</div>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <button class="w-full py-2 bg-stone-900 text-white rounded-lg text-sm">View Full List</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-orange-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-stone-900 mb-12">Stories of Change</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-stone-600 mb-6">"I used to struggle with consistency. Tapasya's leaderboard feature pushed me to wake up at 5 AM every day. It changed my life."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=John" class="w-10 h-10 rounded-full">
+                        <div>
+                            <div class="font-bold text-sm">Aditya Verma</div>
+                            <div class="text-xs text-stone-500">Member for 6 months</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-stone-600 mb-6">"The daily quotes are so well curated. It feels like the app knows exactly what I need to hear. Highly recommended."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" class="w-10 h-10 rounded-full">
+                        <div>
+                            <div class="font-bold text-sm">Sneha Gupta</div>
+                            <div class="text-xs text-stone-500">Member for 3 months</div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Review 3 -->
+                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-stone-600 mb-6">"Finally an app that combines modern habit tracking with Indian spiritual values. The badges make it fun!"</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mike" class="w-10 h-10 rounded-full">
+                        <div>
+                            <div class="font-bold text-sm">Rohan Mehta</div>
+                            <div class="text-xs text-stone-500">Member for 8 months</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-orange-600"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center text-white">
+            <h2 class="text-4xl md:text-5xl font-bold serif-font mb-6">Begin Your Tapasya Today</h2>
+            <p class="text-orange-100 text-lg mb-10 max-w-2xl mx-auto">Join the community of seekers. Download the app and take the first step towards a disciplined, spiritual life.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-orange-600 px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-orange-50 transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="apple" class="w-5 h-5"></i> Apple Store
+                </button>
+                <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="play-circle" class="w-5 h-5"></i> Play Store
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="creator" class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 text-white text-xl font-bold serif-font mb-4">
+                        <i data-lucide="lotus" class="text-orange-500"></i> Tapasya
+                    </div>
+                    <p class="text-sm leading-relaxed max-w-xs">
+                        A digital companion for your spiritual journey. Helping you build discipline, track habits, and find inner peace.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Connect</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center hover:bg-orange-600 hover:text-white transition-all"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center hover:bg-orange-600 hover:text-white transition-all"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center hover:bg-orange-600 hover:text-white transition-all"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2024 Tapasya App. All rights reserved.</p>
+                <p class="mt-2 md:mt-0 flex items-center gap-1">
+                    Made with <i data-lucide="heart" class="w-3 h-3 text-red-500 fill-current"></i> by <span class="text-white font-semibold">Kanchan Maji</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Sticky Navbar effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
+
