@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Divine Banaras | 3-Day Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    :root {
+        --primary: #d35400; /* Saffron/Rust */
+        --secondary: #f39c12; /* Golden */
+        --dark: #2c3e50;
+        --light: #fdfbf7; /* Warm paper */
+        --glass: rgba(255, 255, 255, 0.85);
+        --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+    }
+
+    /* --- HERO SECTION --- */
+    header {
+        position: relative;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        overflow: hidden;
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)),
+                    url('https://thumbs.dreamstime.com/b/view-varanasi-junction-railway-station-varanasi-junction-railway-station-also-known-as-varanasi-cantt-railway-station-220732034.jpg?w=1200?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        z-index: -1;
+        animation: zoomIn 20s infinite alternate;
+    }
+
+    @keyframes zoomIn {
+        from { transform: scale(1); }
+        to { transform: scale(1.1); }
+    }
+
+    .hero-content {
+        text-align: center;
+        padding: 20px;
+        opacity: 0;
+        animation: fadeUp 1s ease-out forwards 0.5s;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+        margin-bottom: 10px;
+        text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--secondary);
+    }
+
+    .badge {
+        display: inline-block;
+        background: var(--primary);
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+
+    /* --- CONTAINER & SECTIONS --- */
+    .container {
+        max-width: 1000px;
+        margin: -80px auto 0; /* Overlap hero */
+        padding: 0 20px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .intro-card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .intro-card h2 {
+        color: var(--primary);
+        margin-bottom: 10px;
+    }
+
+    /* --- TIMELINE ITINERARY --- */
+    .timeline {
+        position: relative;
+        padding: 20px 0;
+    }
+
+    /* The vertical line */
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background: #e0e0e0;
+        transform: translateX(-50%);
+    }
+
+    .day-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease-out;
+    }
+
+    .day-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .day-card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .day-content {
+        width: 45%;
+        background: var(--glass);
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        border-left: 5px solid var(--primary);
+        position: relative;
+    }
+
+    .day-card:nth-child(even) .day-content {
+        border-left: none;
+        border-right: 5px solid var(--primary);
+        text-align: right;
+    }
+
+    .day-img {
+        width: 45%;
+        height: 250px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+    }
+
+    .day-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .day-img:hover img {
+        transform: scale(1.05);
+    }
+
+    /* The Date Circle */
+    .date-circle {
+        position: absolute;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        transform: translateX(-50%);
+        z-index: 2;
+        box-shadow: 0 0 0 5px var(--light);
+    }
+
+    .day-content h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .day-content ul {
+        list-style: none;
+    }
+
+    .day-content li {
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+    }
+
+    .day-content li i {
+        color: var(--secondary);
+        margin-right: 8px;
+    }
+
+    /* --- BUDGET SECTION --- */
+    .budget-section {
+        background: white;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        margin: 60px 0;
+    }
+
+    .budget-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .budget-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+
+    .budget-item {
+        text-align: center;
+        padding: 20px;
+        background: #fff9f0;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+
+    .budget-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .budget-item i {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+    }
+
+    .budget-item span {
+        display: block;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    .budget-item small {
+        color: #777;
+    }
+
+    .total-cost {
+        grid-column: 1 / -1;
+        background: var(--dark);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+        text-align: center;
+        padding: 40px;
+        background: #232323;
+        color: #888;
+        font-size: 0.9rem;
+    }
+
+    /* --- ANIMATION KEYFRAMES --- */
+    @keyframes fadeUp {
+        to { opacity: 1; transform: translateY(0); }
+        from { opacity: 0; transform: translateY(20px); }
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+        .timeline::before { left: 20px; }
+        .date-circle { left: 20px; }
+        
+        .day-card {
+            flex-direction: column;
+            padding-left: 50px;
+            position: relative;
+        }
+
+        .day-card:nth-child(even) {
+            flex-direction: column; /* Reset even cards */
+        }
+
+        .day-content, .day-img {
+            width: 100%;
+        }
+
+        .day-img {
+            margin-top: 20px;
+            height: 200px;
+        }
+
+        .day-card:nth-child(even) .day-content {
+            text-align: left;
+            border-right: none;
+            border-left: 5px solid var(--primary);
+        }
+
+        header h1 { font-size: 2.5rem; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <p>15–18 March</p>
+        <h1>Mystical Banaras</h1>
+        <div class="badge">Trip from Jamtara</div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="intro-card">
+        <h2>The Spiritual Capital of India</h2>
+        <p>A perfectly crafted 3-day budget itinerary to experience the Ghats, the Aarti, and the ancient alleyways of Kashi.</p>
+    </div>
+
+    <div class="timeline">
+        
+        <div class="day-card">
+            <div class="date-circle">15</div>
+            <div class="day-content">
+                <h3>The Departure</h3>
+                <ul>
+                    <li><i class="fa-solid fa-train"></i> <strong>11:00 PM:</strong> Board Sleeper Train from Jamtara (JMT).</li>
+                    <li><i class="fa-solid fa-ticket"></i> <strong>Cost:</strong> ₹400 approx per head.</li>
+                    <li><i class="fa-solid fa-moon"></i> Overnight journey.</li>
+                </ul>
+            </div>
+            <div class="day-img">
+                <img src="https://thumbs.dreamstime.com/b/view-varanasi-junction-railway-station-varanasi-junction-railway-station-also-known-as-varanasi-cantt-railway-station-220732034.jpg?w=1200?auto=format&fit=crop&w=800&q=80" alt="Train Journey">
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="date-circle">16</div>
+            <div class="day-content">
+                <h3>Arrival & The Holy Ghats</h3>
+                <ul>
+                    <li><i class="fa-solid fa-clock"></i> <strong>09:40 AM:</strong> Reach Varanasi Junction.</li>
+                    <li><i class="fa-solid fa-hotel"></i> Check-in Godowlia/Assi (₹300–400/head).</li>
+                    <li><i class="fa-solid fa-gopuram"></i> Kashi Vishwanath & Vishwanath Gali.</li>
+                    <li><i class="fa-solid fa-fire-flame-curved"></i> <strong>06:15 PM:</strong> Ganga Aarti at Dashashwamedh.</li>
+                </ul>
+            </div>
+            <div class="day-img">
+                <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/04/Ganga-Aarti-Varanasi-1.jpg?w=1200&ssl=1?auto=format&fit=crop&w=800&q=80" alt="Ganga Aarti">
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="date-circle">17</div>
+            <div class="day-content">
+                <h3>Sunrise, Boat & Sarnath</h3>
+                <ul>
+                    <li><i class="fa-solid fa-sun"></i> <strong>05:45 AM:</strong> Subah-e-Banaras (Assi Ghat).</li>
+                    <li><i class="fa-solid fa-sailboat"></i> Boat ride to Dashashwamedh.</li>
+                    <li><i class="fa-solid fa-dharmachakra"></i> Sarnath Excursion (Till 1:30 PM).</li>
+                    <li><i class="fa-solid fa-mug-hot"></i> Evening cafe hopping at Assi.</li>
+                </ul>
+            </div>
+            <div class="day-img">
+                <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/72/68/de.jpg?auto=format&fit=crop&w=800&q=80" alt="Boats in Varanasi">
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="date-circle">18</div>
+            <div class="day-content">
+                <h3>Temples, BHU & Return</h3>
+                <ul>
+                    <li><i class="fa-solid fa-om"></i> Tulsi Manas, Durga Kund, Sankat Mochan.</li>
+                    <li><i class="fa-solid fa-graduation-cap"></i> BHU Campus Walk.</li>
+                    <li><i class="fa-solid fa-bag-shopping"></i> Shop for Wooden Toys & Rudraksha.</li>
+                    <li><i class="fa-solid fa-train"></i> <strong>06:00 PM:</strong> Return Train.</li>
+                </ul>
+            </div>
+            <div class="day-img">
+                <img src="https://i0.wp.com/stampedmoments.com/wp-content/uploads/2023/12/manikarnika-ghat-varanasi.jpg?w=1440&ssl=1?auto=format&fit=crop&w=800&q=80" alt="Varanasi Street">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="budget-section">
+        <div class="budget-header">
+            <h2>Estimated Budget</h2>
+            <p>Per Person Breakdown</p>
+        </div>
+        <div class="budget-grid">
+            <div class="budget-item">
+                <i class="fa-solid fa-train"></i>
+                <span>₹800</span>
+                <small>Round Trip</small>
+            </div>
+            <div class="budget-item">
+                <i class="fa-solid fa-bed"></i>
+                <span>₹700</span>
+                <small>Stay (avg)</small>
+            </div>
+            <div class="budget-item">
+                <i class="fa-solid fa-bowl-food"></i>
+                <span>₹1200</span>
+                <small>Food</small>
+            </div>
+            <div class="budget-item">
+                <i class="fa-solid fa-rickshaw"></i>
+                <span>₹300</span>
+                <small>Local Travel</small>
+            </div>
+            <div class="total-cost">
+                <strong>Total Estimate: ₹3000 – ₹3500</strong>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Banaras Trip Plan • Crafted with <i class="fa-solid fa-heart" style="color:red;"></i> for a spiritual journey.</p>
+</footer>
+
+<script>
+    // Simple Scroll Animation Logic
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.day-card').forEach(card => {
+        observer.observe(card);
+    });
+</script>
+
+</body>
+</html>
